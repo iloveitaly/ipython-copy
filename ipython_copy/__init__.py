@@ -1,12 +1,8 @@
 import logging
 import os
 
-logging.basicConfig(
-    level=os.environ.get("LOG_LEVEL", "INFO").upper(),
-)
-
-logger = logging.getLogger(__name__)
-
+log = logging.getLogger(__name__)
 
 def main():
-    logger.info("Hello, Logs!")
+    logging.basicConfig(level=os.getenv("LOG_LEVEL", "WARNING"))
+    log.info("Hello, Logs!")
