@@ -64,7 +64,7 @@ class IPythonClipboard(Magics):
 
         # 2. Handle default (no args)
         if not line:
-            content = str(self.shell.user_ns.get("_", ""))
+            content = str(self.shell.user_ns.get("_", ""))  # type: ignore
             pycopy(content)
             print("Copied last output ('_') to clipboard.")
             return
@@ -72,15 +72,15 @@ class IPythonClipboard(Magics):
         # 3. Handle line number (e.g., "7" -> "_7")
         if line.isdigit():
             history_var = f"_{line}"
-            if history_var in self.shell.user_ns:
-                content = str(self.shell.user_ns[history_var])
+            if history_var in self.shell.user_ns:  # type: ignore
+                content = str(self.shell.user_ns[history_var])  # type: ignore
                 pycopy(content)
                 print(f"Copied output of line {line} to clipboard.")
                 return
 
         # 4. Handle known variables or explicit history (e.g., "my_var", "_i5")
-        if line in self.shell.user_ns:
-            content = str(self.shell.user_ns[line])
+        if line in self.shell.user_ns:  # type: ignore
+            content = str(self.shell.user_ns[line])  # type: ignore
             pycopy(content)
             print(f"Copied variable '{line}' to clipboard.")
             return
@@ -146,14 +146,14 @@ class IPythonClipboard(Magics):
                 )
             else:
                 if args.output:
-                    self.shell.user_ns[args.output[0]] = unpickled
+                    self.shell.user_ns[args.output[0]] = unpickled  # type: ignore
                     print(f"Unpickled clipboard into '{args.output[0]}'.")
                 else:
                     sys.stdout.write(str(unpickled) + "\n")
 
         else:  # pickle a variable
-            val = self.shell.user_ns.get(args.var)
-            if val is None and args.var not in self.shell.user_ns:
+            val = self.shell.user_ns.get(args.var)  # type: ignore
+            if val is None and args.var not in self.shell.user_ns:  # type: ignore
                 print(f"Variable '{args.var}' not found.", file=sys.stderr)
                 return
 
