@@ -1,8 +1,3 @@
-import logging
-import os
+from .ipython_clipboard import load_ipython_extension, IPythonClipboard
 
-log = logging.getLogger(__name__)
-
-def main():
-    logging.basicConfig(level=os.getenv("LOG_LEVEL", "WARNING"))
-    log.info("Hello, Logs!")
+__all__ = ["load_ipython_extension", "IPythonClipboard"]

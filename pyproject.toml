@@ -1,8 +1,8 @@
 [project]
 name = "ipython-copy"
 version = "0.1.0"
-description = ""
-keywords = []
+description = "IPython magic commands to copy text, variables, and history to your system clipboard."
+keywords = ["ipython", "clipboard", "repl", "osc52"]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
@@ -10,8 +10,6 @@ authors = [{ name = "Michael Bianco", email = "mike@mikebian.co" }]
 urls = { "Repository" = "https://github.com/iloveitaly/ipython-copy" }
 
 # additional packaging information: https://packaging.python.org/en/latest/specifications/core-metadata/#license
-[project.scripts]
-ipython-copy = "ipython_copy:main"
 
 [build-system]
 requires = ["uv_build>=0.10.0"]
@@ -21,9 +19,6 @@ build-backend = "uv_build"
 # avoids the src/ directory structure
 module-root = ""
 
-[tool.uv.sources.pyperclip]
-path = "/Users/mike/Projects/python/pyperclip"
-editable = true
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
