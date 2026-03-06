@@ -19,6 +19,9 @@ build-backend = "uv_build"
 # avoids the src/ directory structure
 module-root = ""
 
+[tool.uv.sources.pyperclip]
+git = "https://github.com/iloveitaly/pyperclip.git"
+rev = "feat-osc52-fallback"
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
