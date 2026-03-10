@@ -5,7 +5,7 @@ description = "IPython magic commands to copy text, variables, and history to yo
 keywords = ["ipython", "clipboard", "repl", "osc52"]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["pyperclip", "ipython"]
 authors = [{ name = "Michael Bianco", email = "mike@mikebian.co" }]
 urls = { "Repository" = "https://github.com/iloveitaly/ipython-copy" }
 
@@ -19,9 +19,7 @@ build-backend = "uv_build"
 # avoids the src/ directory structure
 module-root = ""
 
-[tool.uv.sources.pyperclip]
-git = "https://github.com/iloveitaly/pyperclip.git"
-rev = "feat-osc52-fallback"
+
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
@@ -30,9 +28,12 @@ dev = [
     "coverage>=7.13.4",
     "pytest-cov>=7.0.0",
     "covdefaults>=2.3.0",
-    "ipython>=9.10.0",
-    "pyperclip>=1.11.0",
 ]
+
+# enables copy to clipboard in remote sessions / anywhere
+[tool.uv.sources.pyperclip]
+git = "https://github.com/iloveitaly/pyperclip.git"
+rev = "feat-osc52-fallback"
 
 [tool.pyright]
 exclude = ["examples/", "playground/", "tmp/", ".venv/", "tests/"]

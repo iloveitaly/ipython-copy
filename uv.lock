@@ -220,14 +220,16 @@ wheels = [
 name = "ipython-copy"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "ipython", version = "9.10.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "ipython", version = "9.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "pyperclip" },
+]
 
 [package.dev-dependencies]
 dev = [
     { name = "covdefaults" },
     { name = "coverage" },
-    { name = "ipython", version = "9.10.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "ipython", version = "9.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "pyperclip" },
     { name = "pyright", extra = ["nodejs"] },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -235,13 +237,15 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [
+    { name = "ipython" },
+    { name = "pyperclip", git = "https://github.com/iloveitaly/pyperclip.git?rev=feat-osc52-fallback" },
+]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "covdefaults", specifier = ">=2.3.0" },
     { name = "coverage", specifier = ">=7.13.4" },
-    { name = "ipython", specifier = ">=9.10.0" },
-    { name = "pyperclip", git = "https://github.com/iloveitaly/pyperclip.git?rev=feat-osc52-fallback" },
     { name = "pyright", extras = ["nodejs"], specifier = ">=1.1.408" },
     { name = "pytest", specifier = ">=8.3.4" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
