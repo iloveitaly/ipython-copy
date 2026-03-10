@@ -1,6 +1,6 @@
 [project]
 name = "ipython-copy"
-version = "0.1.0"
+version = "0.1.1"
 description = "IPython magic commands to copy text, variables, and history to your system clipboard."
 keywords = ["ipython", "clipboard", "repl", "osc52"]
 readme = "README.md"

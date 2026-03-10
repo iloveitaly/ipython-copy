@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/iloveitaly/ipython-copy/compare/v0.1.0...v0.1.1) (2026-03-10)
+
+
+### Bug Fixes
+
+* add pyperclip and ipython to main dependencies ([587070a](https://github.com/iloveitaly/ipython-copy/commit/587070a2da0ad8bdc10e8c8910efdccf9230196d))
+
 ## 0.1.0 (2026-03-06)
 
 
