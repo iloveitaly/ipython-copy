@@ -34,7 +34,7 @@ def test_valid_line_num():
 
 
 @patch("ipython_copy.ipython_clipboard.pycopy")
-def test_clip(mock_pycopy, ip):
+def test_copy(mock_pycopy, ip):
     magics = IPythonClipboard(shell=ip)
     ip.user_ns.update({"_": "last_out", "_7": "line_7_out", "my_var": "var_value"})
 
