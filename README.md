@@ -5,7 +5,7 @@
 
 # Copy Text, Variables, and History to Clipboard from IPython
 
-I built this to solve a constant point of friction: getting data out of a remote or local REPL and into my system clipboard. This is a cross-platform IPython plugin that adds smart `%clip` and `%pickle` magic commands. It seamlessly handles both local GUI clipboards and headless remote SSH sessions.
+I built this to solve a constant point of friction: getting data out of a remote or local REPL and into my system clipboard. This is a cross-platform IPython plugin that adds smart `%copy` and `%pickle` magic commands. It seamlessly handles both local GUI clipboards and headless remote SSH sessions.
 
 ## Installation
 
@@ -23,26 +23,26 @@ To load it automatically every time you start IPython, you can add it to your `i
 
 ## Usage
 
-The plugin exposes a `%clip` magic command that tries to be smart about what you want to copy. It handles standard string inputs, looks up variables in your namespace, and can even reference your output history.
+The plugin exposes a `%copy` magic command that tries to be smart about what you want to copy. It handles standard string inputs, looks up variables in your namespace, and can even reference your output history.
 
 ```python
 # Copy the last output
-%clip
+%copy
 
 # Copy the output from a specific history line
-%clip 7
+%copy 7
 
 # Copy the string representation of a specific variable
-%clip my_var
+%copy my_var
 
 # Copy a literal string
-%clip hello world
+%copy hello world
 ```
 
 You can also use it as a cell magic to easily copy multi-line blocks of text:
 
 ```python
-%%clip
+%%copy
 Even multi
 lines
 work!
@@ -52,8 +52,8 @@ If you are dealing with complex data structures, use the `%pickle` magic to seri
 
 ## Features
 
-* Smart line magic (`%clip`) for copying the last output, history lines, or specific variables.
-* Cell magic (`%%clip`) for cleanly copying multi-line blocks.
+* Smart line magic (`%copy`) for copying the last output, history lines, or specific variables.
+* Cell magic (`%%copy`) for cleanly copying multi-line blocks.
 * `%pickle` magic to serialize and copy complex Python objects directly to the clipboard.
 * Fully cross-platform using `pyperclip`.
 * Automatic headless and remote server support via OSC 52 sequence fallbacks.

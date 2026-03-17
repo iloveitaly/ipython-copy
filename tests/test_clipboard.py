@@ -39,23 +39,23 @@ def test_clip(mock_pycopy, ip):
     ip.user_ns.update({"_": "last_out", "_7": "line_7_out", "my_var": "var_value"})
 
     # Test cell magic
-    magics.clip("first line", "second line")
+    magics.copy("first line", "second line")
     mock_pycopy.assert_called_with("first line\nsecond line")
 
     # Test no args (default to _)
-    magics.clip("")
+    magics.copy("")
     mock_pycopy.assert_called_with("last_out")
 
     # Test line number
-    magics.clip("7")
+    magics.copy("7")
     mock_pycopy.assert_called_with("line_7_out")
 
     # Test known variable
-    magics.clip("my_var")
+    magics.copy("my_var")
     mock_pycopy.assert_called_with("var_value")
 
     # Test literal text
-    magics.clip("hello world")
+    magics.copy("hello world")
     mock_pycopy.assert_called_with("hello world")
 
 

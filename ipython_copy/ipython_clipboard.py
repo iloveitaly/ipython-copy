@@ -39,17 +39,17 @@ def valid_line_num(s: str) -> str:
 @magics_class
 class IPythonClipboard(Magics):
     @line_cell_magic
-    def clip(self, line: str = "", cell: str | None = None) -> None:
+        def copy(self, line: str = "", cell: str | None = None) -> None:
         """
         Copies text, variables, or IPython history to the clipboard.
 
         Usage:
-          %clip              # Copies the last output '_'
-          %clip 7            # Copies the output from line 7 ('_7')
-          %clip my_var       # Copies the string representation of 'my_var'
-          %clip hello world  # Copies the literal text "hello world"
+                    %copy              # Copies the last output '_'
+                    %copy 7            # Copies the output from line 7 ('_7')
+                    %copy my_var       # Copies the string representation of 'my_var'
+                    %copy hello world  # Copies the literal text "hello world"
 
-          %%clip             # Cell magic: copies the entire cell contents
+                    %%copy             # Cell magic: copies the entire cell contents
           multi-line
           text
         """
