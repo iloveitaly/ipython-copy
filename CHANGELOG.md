@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/iloveitaly/ipython-copy/compare/v0.1.1...v0.1.2) (2026-03-23)
+
+
+### Bug Fixes
+
+* trigger a new build with renamed magic ([9ad54cb](https://github.com/iloveitaly/ipython-copy/commit/9ad54cbda113ebcf346b7dff8f4cd99a0137852f))
+
 ## [0.1.1](https://github.com/iloveitaly/ipython-copy/compare/v0.1.0...v0.1.1) (2026-03-10)
 
 
