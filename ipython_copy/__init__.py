@@ -1,3 +1,3 @@
-from .ipython_clipboard import load_ipython_extension, IPythonClipboard
+from .ipython_clipboard import IPythonClipboard, load_ipython_extension
 
-__all__ = ["load_ipython_extension", "IPythonClipboard"]
+__all__ = ["IPythonClipboard", "load_ipython_extension"]

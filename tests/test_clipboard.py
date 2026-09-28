@@ -1,8 +1,9 @@
-from unittest.mock import patch
-import pytest
 from argparse import ArgumentTypeError
+from unittest.mock import patch
 
+import pytest
 from IPython.testing.globalipapp import get_ipython
+
 from ipython_copy.ipython_clipboard import (
     IPythonClipboard,
     valid_identifier,
