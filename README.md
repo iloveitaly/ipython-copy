@@ -68,6 +68,7 @@ Here is how it works under the hood:
 2. **Explicit Selection (Optional):** If you want to bypass GUI clipboards and force the use of OSC 52, you can explicitly set it in your Python code:
    ```python
    import pyperclip
+
    pyperclip.set_clipboard("osc52")
    ```
 
